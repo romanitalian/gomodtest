@@ -1,1 +1,1 @@
-module github.com/romanitalian/gomodtest/v2
+module github.com/romanitalian/gomodtest/v3

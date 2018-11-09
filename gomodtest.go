@@ -1,12 +1,21 @@
 package gomodtest
 
 import (
+	"errors"
 	"fmt"
-	"time"
 )
 
-func Hi(name string) string {
-	fmt.Println("test")
-	fmt.Println(time.Now().String())
-	return fmt.Sprintf("Hi, %s! It is great Day!", name)
+func Hi(name, lang string) (string, error) {
+	switch lang {
+	case "en":
+		return fmt.Sprintf("Hi, %s!", name), nil
+	case "pt":
+		return fmt.Sprintf("Oi, %s!", name), nil
+	case "es":
+		return fmt.Sprintf("¡Hola, %s!", name), nil
+	case "fr":
+		return fmt.Sprintf("Bonjour, %s!", name), nil
+	default:
+		return "", errors.New("unknown language")
+	}
 }
